@@ -158,6 +158,32 @@ tr:hover td{background:#f7fafc}
 .chk-lbl{flex:1;color:#2d3748;line-height:1.5}
 .chk-lbl .sub{font-size:.76rem;color:#718096;margin-top:2px}
 
+/* ===== WELCOME MODAL ===== */
+.wm-overlay{position:fixed;inset:0;background:rgba(15,30,60,.78);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(5px);animation:wm-fade .35s ease}
+@keyframes wm-fade{from{opacity:0}to{opacity:1}}
+.wm-dialog{background:#fff;border-radius:16px;max-width:700px;width:100%;max-height:92vh;overflow-y:auto;box-shadow:0 24px 64px rgba(0,0,0,.38);animation:wm-slide .4s ease}
+@keyframes wm-slide{from{transform:translateY(28px);opacity:0}to{transform:translateY(0);opacity:1}}
+.wm-header{background:linear-gradient(135deg,#1a365d 0%,#2b6cb0 60%,#2a4a7f 100%);color:#fff;padding:30px 34px 26px;border-radius:16px 16px 0 0;text-align:center;position:relative;overflow:hidden}
+.wm-header::before{content:'✈️';font-size:7rem;position:absolute;right:-16px;top:-10px;opacity:.07;line-height:1}
+.wm-badge{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:3px 13px;font-size:.72rem;font-weight:700;letter-spacing:.4px;margin-bottom:10px}
+.wm-header h2{font-size:1.45rem;font-weight:800;margin:4px 0}
+.wm-hsub{font-size:.78rem;color:#90cdf4;letter-spacing:.4px;margin-top:4px}
+.wm-body{padding:28px 34px;color:#2d3748}
+.wm-greeting{font-size:1rem;font-weight:700;color:#1a365d;margin-bottom:16px}
+.wm-body p{font-size:.875rem;line-height:1.8;margin-bottom:14px;color:#4a5568}
+.wm-body strong{color:#1a365d}
+.wm-hl{background:linear-gradient(135deg,#ebf8ff,#e6fffa);border-left:4px solid #2b6cb0;border-radius:0 9px 9px 0;padding:13px 18px;margin:18px 0;font-size:.84rem;color:#1a4e8a;line-height:1.7}
+.wm-cta{background:linear-gradient(135deg,#f0fff4,#ebf8ff);border:1.5px solid #bee3f8;border-radius:10px;padding:14px 18px;margin:18px 0 0;font-size:.84rem;color:#1a4e8a;line-height:1.7}
+.wm-sig{margin-top:22px;padding-top:16px;border-top:2px dashed #e2e8f0;font-size:.84rem;color:#4a5568;line-height:1.7}
+.wm-sig strong{color:#1a365d;font-size:.95rem;display:block;margin-bottom:2px}
+.wm-sig .role{font-size:.75rem;color:#718096}
+.wm-footer{padding:16px 34px 26px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #e2e8f0;flex-wrap:wrap;background:#fafafa;border-radius:0 0 16px 16px}
+.wm-nsa{display:flex;align-items:center;gap:7px;font-size:.79rem;color:#718096;cursor:pointer;user-select:none}
+.wm-nsa input{width:16px;height:16px;cursor:pointer;accent-color:#2b6cb0}
+.wm-btn{background:linear-gradient(135deg,#2b6cb0,#1a365d);color:#fff;border:none;padding:12px 26px;border-radius:9px;font-size:.88rem;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:all .2s;box-shadow:0 3px 12px rgba(43,108,176,.35)}
+.wm-btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(43,108,176,.45)}
+@media print{.wm-overlay{display:none!important}}
+
 /* ===== POWER-TOOL & BAUMDIAGRAMM ===== */
 .pt-hero{background:linear-gradient(135deg,#1a365d,#2b6cb0 50%,#38a169);border-radius:14px;padding:38px;color:#fff;text-align:center;margin-bottom:20px;position:relative;overflow:hidden}
 .pt-hero h3{font-size:1.5rem;font-weight:800;margin-bottom:8px}
@@ -192,6 +218,51 @@ tr:hover td{background:#f7fafc}
 </style>
 </head>
 <body>
+
+<!-- WELCOME MODAL -->
+<div id="wm-overlay" class="wm-overlay" style="display:none">
+  <div class="wm-dialog">
+
+    <div class="wm-header">
+      <div style="font-size:2.8rem;margin-bottom:8px">✈️</div>
+      <span class="wm-badge">TowBot V4.1.3 · Exposé IT-Sicherheit & Zertifizierung</span>
+      <h2>Persönliches Anschreiben</h2>
+      <div class="wm-hsub">Flughafen-Verkehrszentrale · IT-Zulassung & Autorisierung</div>
+    </div>
+
+    <div class="wm-body">
+      <p class="wm-greeting">Sehr geehrte Damen und Herren,</p>
+
+      <p>mein Name ist <strong>[Ihr Name]</strong>. Als Mitarbeiter der Verkehrszentrale am Flughafen kenne ich die täglichen Abläufe der Schleppdisposition aus eigener Erfahrung – und ich kenne ihre Schwächen: manuellen Aufwand, Fehleranfälligkeit bei Planänderungen und den hohen Zeitdruck, unter dem jede Kommunikation an die Airlines stattfindet.</p>
+
+      <p>Aus dieser Erkenntnis heraus habe ich <strong>TowBot</strong> entwickelt – ein digitales Werkzeug, das den gesamten Workflow der Verkehrszentrale von der Dateneingabe bis zur professionellen Kommunikation an alle Partnerorganisationen automatisiert, dokumentiert und sicher macht.</p>
+
+      <div class="wm-hl">
+        💡 <strong>TowBot ist keine Unternehmensinitiative.</strong> Es ist die Idee eines Menschen, der seinen Arbeitsalltag kennt und überzeugt ist, dass ein gezieltes digitales Werkzeug den Disponenten, den Airlines und dem gesamten Flughafenbetrieb substanziellen, messbaren Mehrwert bringt – ohne jede IT-Infrastruktur, ohne Server, ohne Risiko.
+      </div>
+
+      <p>In diesem Exposé finden Sie eine vollständige technische Dokumentation von TowBot V4.1.3: seine Architektur, sein Sicherheitsmodell nach dem Prinzip <em>Zero Trust by Design</em>, seine DSGVO-Konformität sowie einen integrierten Testwert-Generator und eine vollständig funktionsfähige Live-Demo. Alles, was Sie für eine fundierte Entscheidung benötigen, ist in diesem Dokument enthalten.</p>
+
+      <div class="wm-cta">
+        ✋ <strong>Meine Bitte an Sie:</strong> Lesen Sie dieses Exposé mit offenem Blick. Testen Sie TowBot direkt in der eingebetteten Live-Demo. Und wenn Sie – wie ich – überzeugt sind, dass dieses Werkzeug die Arbeit der Verkehrszentrale nachhaltig verbessert: Begleiten Sie mich aktiv auf dem Weg zur <strong>offiziellen IT-Zertifizierung und Autorisierung</strong> für den Einsatz im IT-Umfeld unseres Flughafens. TowBot ist bereit – ich brauche Ihre Unterstützung und Ihr Fachwissen.
+      </div>
+
+      <div class="wm-sig">
+        Mit freundlichen Grüßen<br><br>
+        <strong>[Ihr Name]</strong>
+        <span class="role">Verkehrszentrale · [Flughafen] · Ideengeber & Entwickler TowBot V4.1.3</span>
+      </div>
+    </div>
+
+    <div class="wm-footer">
+      <label class="wm-nsa">
+        <input type="checkbox" id="wm-nsa"> Nicht mehr anzeigen
+      </label>
+      <button class="wm-btn" onclick="closeWelcomeModal()">✈️ &nbsp;Zum Exposé</button>
+    </div>
+
+  </div>
+</div>
 
 <div id="scroll-prog"></div>
 
@@ -1074,6 +1145,19 @@ tr:hover td{background:#f7fafc}
 </div><!-- /main -->
 
 <script>
+// ===== WELCOME MODAL =====
+(function(){
+  if(localStorage.getItem('towbot_welcome_dismissed')==='1') return;
+  const ov=document.getElementById('wm-overlay');
+  if(ov) ov.style.display='flex';
+})();
+function closeWelcomeModal(){
+  const ov=document.getElementById('wm-overlay');
+  const nsa=document.getElementById('wm-nsa');
+  if(nsa && nsa.checked) localStorage.setItem('towbot_welcome_dismissed','1');
+  if(ov){ ov.style.opacity='0'; ov.style.transition='opacity .28s'; setTimeout(()=>ov.style.display='none',280); }
+}
+
 // ===== NAV SCROLL =====
 const main = document.querySelector('.main');
 const prog = document.getElementById('scroll-prog');
