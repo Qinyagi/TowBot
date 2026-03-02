@@ -335,7 +335,7 @@ tr:hover td{background:#f7fafc}
         <div class="cm"><div class="l">Produktversion</div><div class="v">4.1.3 (Production Ready)</div></div>
         <div class="cm"><div class="l">Erstellt</div><div class="v">01. März 2026</div></div>
         <div class="cm"><div class="l">Einsatzbereich</div><div class="v">Verkehrszentrale · Flughafen</div></div>
-        <div class="cm"><div class="l">Plattform</div><div class="v">HTML5 · Offline-SPA · ~437 KB</div></div>
+        <div class="cm"><div class="l">Plattform</div><div class="v">HTML5 · Offline-SPA · ~828 KB</div></div>
         <div class="cm"><div class="l">Klassifizierung</div><div class="v">🔒 INTERN</div></div>
       </div>
     </div>
@@ -365,7 +365,7 @@ tr:hover td{background:#f7fafc}
   <!-- 2. EXECUTIVE SUMMARY -->
   <section id="executive-summary">
     <div class="sh"><div class="si si-b">🎯</div><div><div class="sn">ABSCHNITT 02</div><h2>Executive Summary</h2></div></div>
-    <div class="alert ai"><span class="alert-ico">ℹ️</span><div><h4>Kernaussage</h4><p>TowBot ist eine vollständig <strong>im Browser lauffähige Offline-SPA</strong> (~437 KB, eine einzige HTML-Datei), die Flugzeug-Schleppereignisse am Flughafen digital verwaltet, versioniert, dokumentiert (PDF) und per EML-Datei an Partnerorganisationen kommuniziert. Es gibt keine Server-Infrastruktur, keinen Cloud-Speicher, keine Benutzerkonten und keine Installation.</p></div></div>
+    <div class="alert ai"><span class="alert-ico">ℹ️</span><div><h4>Kernaussage</h4><p>TowBot ist eine vollständig <strong>im Browser lauffähige Offline-SPA</strong> (~828 KB, eine einzige HTML-Datei), die Flugzeug-Schleppereignisse am Flughafen digital verwaltet, versioniert, dokumentiert (PDF) und per EML-Datei an Partnerorganisationen kommuniziert. Es gibt keine Server-Infrastruktur, keinen Cloud-Speicher, keine Benutzerkonten und keine Installation.</p></div></div>
     <div class="g3">
       <div class="card"><h3>🎯 Was löst TowBot?</h3><p>Tägliche Schleppplanung der Verkehrszentrale wird aus dem Dispositionssystem per Clipboard importiert. TowBot erkennt Änderungen auf Zellebene, gruppiert nach Airline und generiert per Klick professionelle PDFs und vorbefüllte E-Mail-Entwürfe (EML) für 23 vorkonfigurierte Airlines.</p></div>
       <div class="card"><h3>🔒 Was macht es sicher?</h3><p>Kein Netzwerk-Traffic mit Betriebsdaten. Alle Daten verbleiben im Browser (LocalStorage). Kein Backend, keine API, kein Login. XSS-Schutz durch Input-Sanitization. Der gesamte Quellcode ist als Klartext jederzeit auditierbar (F12).</p></div>
@@ -398,7 +398,7 @@ tr:hover td{background:#f7fafc}
       </div>
       <div class="pt-card p"><div class="num">4</div>
         <h4>💼 Null IT-Abhängigkeit – sofort einsatzbereit</h4>
-        <p>Keine Installation, kein Server, keine Administratorrechte, kein Wartungsvertrag, kein Update-Prozess. TowBot besteht aus einer einzigen HTML-Datei (~437 KB) und läuft unmittelbar auf jedem Dienstrechner der Verkehrszentrale mit einem modernen Browser. Es wird kein IT-Ticket benötigt, keine Freigabe durch die IT-Abteilung und kein Rollout-Projekt. Deployment in unter einer Minute: Datei öffnen, fertig.</p>
+        <p>Keine Installation, kein Server, keine Administratorrechte, kein Wartungsvertrag, kein Update-Prozess. TowBot besteht aus einer einzigen HTML-Datei (~828 KB) und läuft unmittelbar auf jedem Dienstrechner der Verkehrszentrale mit einem modernen Browser. Es wird kein IT-Ticket benötigt, keine Freigabe durch die IT-Abteilung und kein Rollout-Projekt. Deployment in unter einer Minute: Datei öffnen, fertig.</p>
         <span class="pt-metric">0 Min. Deployment-Zeit · 0 IT-Aufwand</span>
       </div>
       <div class="pt-card t"><div class="num">5</div>
@@ -514,10 +514,10 @@ tr:hover td{background:#f7fafc}
 <span class="b">│                                                                        │</span>
 <span class="b">└────────────────────────────────────────────────────────────────────────┘</span>
            │                    │
-<span class="y">    ▼ (lokal/.eml)       ▼ (CDN nur für jsPDF)</span>
-<span class="g">  E-Mail Client           cdnjs.cloudflare.com</span>
-<span class="g">  (Outlook/Thbrd)         jsPDF 3.0.1 + autoTable 5.0.2</span>
-<span class="r">  ✗ KEIN Traffic mit Betriebsdaten · ✗ KEINE API · ✗ KEINE Cloud</span></div>
+<span class="y">    ▼ (lokal/.eml)       ▼ (lokal eingebettet)</span>
+<span class="g">  E-Mail Client           jsPDF 3.0.1 + autoTable 5.0.2</span>
+<span class="g">  (Outlook/Thbrd)         vollständig in HTML eingebettet</span>
+<span class="r">  ✗ KEIN Traffic mit Betriebsdaten · ✗ KEINE API · ✗ KEINE Cloud · ✗ KEIN CDN</span></div>
     </div>
     <div class="g2">
       <div class="card">
@@ -526,12 +526,12 @@ tr:hover td{background:#f7fafc}
           <thead><tr><th>Komponente</th><th>Technologie</th><th>Version</th></tr></thead>
           <tbody>
             <tr><td>Basis</td><td>HTML5 + CSS3 + JavaScript ES6+</td><td>–</td></tr>
-            <tr><td>PDF-Rendering</td><td>jsPDF (Cloudflare CDN)</td><td>3.0.1</td></tr>
-            <tr><td>PDF-Tabellen</td><td>jsPDF-AutoTable (CDN)</td><td>5.0.2</td></tr>
+            <tr><td>PDF-Rendering</td><td>jsPDF (<strong>lokal eingebettet</strong>)</td><td>3.0.1</td></tr>
+            <tr><td>PDF-Tabellen</td><td>jsPDF-AutoTable (<strong>lokal eingebettet</strong>)</td><td>5.0.2</td></tr>
             <tr><td>Persistenz</td><td>Browser LocalStorage</td><td>API</td></tr>
             <tr><td>E-Mail</td><td>RFC 822 EML + .eml-Download</td><td>–</td></tr>
             <tr><td>Framework</td><td>Vanilla JS (kein Framework)</td><td>–</td></tr>
-            <tr><td>Deployment</td><td>Einzelne .html-Datei (~437 KB)</td><td>–</td></tr>
+            <tr><td>Deployment</td><td>Einzelne .html-Datei (~828 KB)</td><td>–</td></tr>
           </tbody>
         </table></div>
       </div>
@@ -563,7 +563,7 @@ tr:hover td{background:#f7fafc}
       <div class="bd-wrap">
         <!-- ROOT -->
         <div class="bd-root-row">
-          <div class="bd-root-node">✈️ &nbsp;TowBot V4.1.3 &nbsp;·&nbsp; Airport Towing Management System &nbsp;·&nbsp; Offline-SPA (~437 KB)</div>
+          <div class="bd-root-node">✈️ &nbsp;TowBot V4.1.3 &nbsp;·&nbsp; Airport Towing Management System &nbsp;·&nbsp; Offline-SPA (~828 KB)</div>
         </div>
         <div class="bd-vstem"></div>
         <!-- BRANCHES -->
@@ -864,13 +864,13 @@ tr:hover td{background:#f7fafc}
           <tbody>
             <tr><td>Bildschirm</td><td>min. 1366×768 (optimiert: 1920×1080)</td></tr>
             <tr><td>RAM</td><td>min. 4 GB (empf. 8 GB)</td></tr>
-            <tr><td>Speicher</td><td>~437 KB HTML + ~1 MB LocalStorage</td></tr>
-            <tr><td>Internet</td><td>Nicht erforderlich*</td></tr>
+            <tr><td>Speicher</td><td>~828 KB HTML + ~1 MB LocalStorage</td></tr>
+            <tr><td>Internet</td><td><span class="ok">✅ Vollständig offline-fähig</span></td></tr>
             <tr><td>Installation</td><td>Keine – HTML-Datei direkt im Browser öffnen</td></tr>
             <tr><td>Admin-Rechte</td><td>Keine erforderlich</td></tr>
           </tbody>
         </table></div>
-        <p style="font-size:.75rem;color:#718096;margin-top:8px">*) jsPDF-CDN wird für PDF-Generierung benötigt. Bei strikter Netzwerktrennung: lokale jsPDF-Einbindung (~350 KB, Umsetzungsaufwand ~15 Min.)</p>
+        <p style="font-size:.75rem;color:#276749;margin-top:8px;font-weight:600">✅ jsPDF 3.0.1 und jsPDF-AutoTable 5.0.2 sind vollständig lokal in die HTML-Datei eingebettet – keine Internetverbindung erforderlich, kein CDN, keine externe Abhängigkeit.</p>
       </div>
     </div>
   </section>
@@ -905,24 +905,25 @@ tr:hover td{background:#f7fafc}
             <tr><td>Data Injection</td><td>Regex-Validierung (Airline, E-Mail)</td><td><span class="ok">NIEDRIG</span></td></tr>
             <tr><td>LocalStorage-Manipulation</td><td>Daten nur lokal, kein Remote-Zugriff</td><td><span class="ok">NIEDRIG</span></td></tr>
             <tr><td>Clipboard-Hijacking</td><td>Permission-API (Browser-Dialog)</td><td><span class="ok">NIEDRIG</span></td></tr>
-            <tr><td>CDN-Kompromittierung (jsPDF)</td><td>Nur bei PDF-Generierung, keine Dateneingabe</td><td><span class="warn">MITTEL</span></td></tr>
+            <tr><td>CDN-Kompromittierung (jsPDF)</td><td>jsPDF lokal eingebettet – kein CDN-Aufruf</td><td><span class="ok">KEIN</span></td></tr>
             <tr><td>Datenleck (Netzwerk)</td><td>Kein HTTP-Request mit Betriebsdaten</td><td><span class="ok">KEIN</span></td></tr>
           </tbody>
         </table></div>
-        <div class="alert aw" style="margin-top:10px;margin-bottom:0"><span class="alert-ico">💡</span><div><h4>CDN-Mitigation</h4><p style="font-size:.79rem">Subresource Integrity (SRI) für jsPDF-CDN-Links empfohlen. Alternativ: lokale Einbindung für vollständige CDN-Unabhängigkeit.</p></div></div>
+        <div class="alert as" style="margin-top:10px;margin-bottom:0"><span class="alert-ico">✅</span><div><h4>CDN vollständig eliminiert</h4><p style="font-size:.79rem">jsPDF 3.0.1 und jsPDF-AutoTable 5.0.2 sind direkt in die HTML-Datei eingebettet. Es findet keinerlei externer CDN-Aufruf statt – TowBot ist vollständig netzwerkunabhängig und benötigt keine Internetverbindung.</p></div></div>
       </div>
     </div>
     <div class="card">
       <h3>🌐 Vollständige Netzwerk-Traffic-Analyse</h3>
-      <p style="margin-bottom:10px">Beim normalen Betrieb erzeugt TowBot <strong>ausschließlich folgenden Netzwerk-Traffic</strong> (prüfbar über Browser DevTools → Network-Tab):</p>
+      <p style="margin-bottom:10px">Beim normalen Betrieb erzeugt TowBot <strong>keinerlei Netzwerk-Traffic</strong> (prüfbar über Browser DevTools → Network-Tab). jsPDF und jsPDF-AutoTable sind vollständig lokal eingebettet:</p>
       <div class="tw"><table>
         <thead><tr><th>Request</th><th>Ziel</th><th>Inhalt</th><th>Betriebsdaten?</th></tr></thead>
         <tbody>
-          <tr><td>GET jsPDF</td><td>cdnjs.cloudflare.com</td><td>JavaScript-Bibliothek (~320 KB)</td><td><span class="ok">Nein</span></td></tr>
-          <tr><td>GET jsPDF-AutoTable</td><td>cdnjs.cloudflare.com</td><td>JavaScript-Plugin (~30 KB)</td><td><span class="ok">Nein</span></td></tr>
-          <tr><td>Alle anderen</td><td>–</td><td>–</td><td><span class="ok">Kein Traffic</span></td></tr>
+          <tr><td><span style="text-decoration:line-through;color:#718096">GET jsPDF</span></td><td><span style="color:#276749;font-weight:700">lokal eingebettet</span></td><td>jsPDF 3.0.1 direkt in HTML (~357 KB)</td><td><span class="ok">Kein Traffic</span></td></tr>
+          <tr><td><span style="text-decoration:line-through;color:#718096">GET jsPDF-AutoTable</span></td><td><span style="color:#276749;font-weight:700">lokal eingebettet</span></td><td>AutoTable 5.0.2 direkt in HTML (~35 KB)</td><td><span class="ok">Kein Traffic</span></td></tr>
+          <tr><td>Alle anderen Requests</td><td>–</td><td>–</td><td><span class="ok">Kein Traffic</span></td></tr>
         </tbody>
       </table></div>
+      <div class="alert as" style="margin-top:10px;margin-bottom:0"><span class="alert-ico">✅</span><div><h4>Zero Network Traffic – vollständig offline</h4><p style="font-size:.79rem">TowBot erzeugt im Betrieb <strong>keinen einzigen Netzwerk-Request</strong>. Alle Ressourcen sind in der einzelnen HTML-Datei enthalten. Die Anwendung funktioniert in vollständig abgeschotteten Netzwerken (Air-Gap) ohne jede Einschränkung.</p></div></div>
     </div>
   </section>
 
@@ -1092,7 +1093,7 @@ tr:hover td{background:#f7fafc}
         <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">Kein Netzwerk-Traffic mit Betriebsdaten verifiziert<div class="sub">DevTools → Network-Tab → keine POST/GET mit Nutzdaten während Import/PDF/EML</div></div></li>
         <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">Quellcode-Audit durchgeführt (F12 → Quelltext anzeigen)<div class="sub">Kein obfuskierter Code; vollständige Lesbarkeit gegeben</div></div></li>
         <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">XSS-Schutz durch Input-Sanitization verifiziert<div class="sub">HTML-Entity-Escaping aller User-Inputs, Regex-Validierung Airline-Codes/E-Mails</div></div></li>
-        <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">Externe Bibliotheken geprüft und akzeptiert<div class="sub">jsPDF v3.0.1 (MIT), jsPDF-AutoTable v5.0.2 (MIT) – Cloudflare CDN</div></div></li>
+        <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">Externe Bibliotheken geprüft und akzeptiert<div class="sub">jsPDF v3.0.1 (MIT), jsPDF-AutoTable v5.0.2 (MIT) – <strong>lokal eingebettet</strong>, kein CDN</div></div></li>
         <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">EML-E-Mail-System als sicher eingestuft<div class="sub">RFC-822-Datei wird lokal erstellt und heruntergeladen – kein SMTP, kein direkter Versand</div></div></li>
         <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">Browser-Berechtigungen als akzeptabel eingestuft<div class="sub">Clipboard API (Lesezugriff, einmalige Bestätigung), LocalStorage, Blob/Download</div></div></li>
         <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">Keine Admin-Rechte für Betrieb erforderlich<div class="sub">Normaler Browser-User, keine Systemzugriffe</div></div></li>
@@ -1114,7 +1115,7 @@ tr:hover td{background:#f7fafc}
       <h3>📋 Organisatorische Prüfung</h3>
       <ul class="chk-list">
         <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">Open-Source-Lizenzen (MIT) für jsPDF-Bibliotheken akzeptiert</div></li>
-        <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">CDN-Abhängigkeit (jsPDF) als akzeptabel eingestuft oder lokale Einbindung angefordert</div></li>
+        <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">CDN-Abhängigkeit vollständig eliminiert – jsPDF lokal eingebettet ✅<div class="sub">Keine Internetverbindung erforderlich, kein CDN-Traffic, air-gap-fähig</div></div></li>
         <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">Einweisung der Mitarbeiter der Verkehrszentrale geplant (empf. 30 Min.)<div class="sub">Import-Workflow, PDF/EML-Generierung, Admin-Konfiguration</div></div></li>
         <li><div class="chk-box" onclick="ck(this)"></div><div class="chk-lbl">Backup-Strategie für lokale Daten definiert<div class="sub">Täglicher JSON-Export über Admin → Backup &amp; Reset</div></div></li>
       </ul>
