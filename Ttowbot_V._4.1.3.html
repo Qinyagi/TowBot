@@ -1183,8 +1183,9 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
         };
 
         const cgnAirlines = [
-            { code: 'EW', name: 'Eurowings' },
-            { code: 'FR', name: 'Ryanair' },
+            { code: 'EW', name: 'Eurowings GmbH', iataCode: 'EW', icaoCode: 'EWG', emails: 'towbot@towbot.com' },
+            { code: 'FR', name: 'Ryanair DAC', iataCode: 'FR', icaoCode: 'RYR', emails: 'towbot@towbot.com' },
+            { code: 'X3', name: 'TUI fly Deutschland GmbH', iataCode: 'X3', icaoCode: 'TUI', emails: 'towbot@towbot.com' },
             { code: 'PC', name: 'Pegasus Airlines' },
             { code: 'LH', name: 'Lufthansa' },
             { code: 'OS', name: 'Austrian Airlines' },
@@ -1328,7 +1329,22 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
         function initializeCgnAirlines() {
             cgnAirlines.forEach(airline => {
                 if (!airlines[airline.code]) {
-                    airlines[airline.code] = { name: airline.name, emails: '', created: new Date().toISOString(), source: 'cgn_default' };
+                    // Neue Airline anlegen – vollständige Daten wenn vorhanden
+                    airlines[airline.code] = {
+                        name: airline.name,
+                        emails: airline.emails || '',
+                        iataCode: airline.iataCode || null,
+                        icaoCode: airline.icaoCode || null,
+                        logo: null,
+                        created: new Date().toISOString(),
+                        source: 'cgn_default'
+                    };
+                } else {
+                    // Bestehende Airline: fehlende Pflichtfelder (IATA/ICAO/Email) aus Stammdaten ergänzen
+                    const a = airlines[airline.code];
+                    if (!a.iataCode && airline.iataCode) a.iataCode = airline.iataCode;
+                    if (!a.icaoCode && airline.icaoCode) a.icaoCode = airline.icaoCode;
+                    if (!a.emails && airline.emails) a.emails = airline.emails;
                 }
             });
         }
