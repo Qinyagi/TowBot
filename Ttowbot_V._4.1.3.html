@@ -1028,7 +1028,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
                 <h2>⚙️ Admin-Bereich</h2>
 
                 <div class="admin-section">
-                    <h3>✈️ Airlines-Verwaltung (CGN)</h3>
+                    <h3>✈️ Airlines-Verwaltung</h3>
                     <h4>Neue Airline hinzufügen:</h4>
                     <div class="form-group">
                         <label for="airlineCode">Airline-Code (2-3 Zeichen, IATA/ICAO):</label>
@@ -1060,7 +1060,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
                     </div>
                     <button class="action-btn" onclick="saveAirline()">💾 Airline speichern</button>
                     <div class="mt-20">
-                        <h4>📋 Alle Airlines (CGN):</h4>
+                        <h4>📋 Alle Airlines:</h4>
                         <div id="airlinesList"></div>
                     </div>
                 </div>
@@ -1069,11 +1069,11 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
                     <h3>📧 E-Mail-Client-Konfiguration</h3>
                     <div class="form-group">
                         <label for="senderName">Absender Name:</label>
-                        <input type="text" id="senderName" placeholder="z.B. Verkehrszentrale CGN" value="Verkehrszentrale CGN">
+                        <input type="text" id="senderName" placeholder="z.B. Verkehrszentrale [FLUGHAFEN]" value="Verkehrszentrale [FLUGHAFEN]">
                     </div>
                     <div class="form-group">
                         <label for="senderEmail">Absender E-Mail-Adresse:</label>
-                        <input type="email" id="senderEmail" placeholder="z.B. verkehrszentrale@cgn.de" value="verkehrszentrale@cgn.de">
+                        <input type="email" id="senderEmail" placeholder="z.B. verkehrszentrale@flughafen.de" value="towbot@towbot.com">
                     </div>
                     <div class="form-group">
                         <label for="emailClient">Bevorzugter E-Mail-Client:</label>
@@ -1177,8 +1177,8 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
         let selectedAirport = 'CGN';
         let emailClientSettings = {
             client: 'outlook_classic',
-            senderName: 'Verkehrszentrale CGN',
-            senderEmail: 'verkehrszentrale@cgn.de',
+            senderName: 'Verkehrszentrale [FLUGHAFEN]',
+            senderEmail: 'towbot@towbot.com',
             subject: 'Towbot Bereitstellungsauftrag - {airline} - {timestamp} - {shift}'
         };
 
@@ -1639,8 +1639,8 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
                 const flugArr = (row['Flug Arr'] || '').trim();
                 const flugDep = (row['Flug Dep'] || '').trim();
                 let airlineCode = '';
-                if (flugDep) airlineCode = flugDep.match(/^[A-Z0-9]{2,3}/)?.[0] || '';
-                if (!airlineCode && flugArr) airlineCode = flugArr.match(/^[A-Z0-9]{2,3}/)?.[0] || '';
+                if (flugDep) airlineCode = flugDep.match(/^[A-Z0-9]{2}/)?.[0] || '';
+                if (!airlineCode && flugArr) airlineCode = flugArr.match(/^[A-Z0-9]{2}/)?.[0] || '';
                 if (airlineCode) airlineSet.add(airlineCode.toUpperCase());
             });
             return Array.from(airlineSet);
@@ -1696,8 +1696,8 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
                 const flugDep = (row['Flug Dep'] || '').trim();
                 const flugArr = (row['Flug Arr'] || '').trim();
                 let airlineCode = '';
-                if (flugDep) { const m = flugDep.match(/^[A-Z0-9]{2,3}/); airlineCode = m ? m[0] : ''; }
-                if (!airlineCode && flugArr) { const m = flugArr.match(/^[A-Z0-9]{2,3}/); airlineCode = m ? m[0] : ''; }
+                if (flugDep) { const m = flugDep.match(/^[A-Z0-9]{2}/); airlineCode = m ? m[0] : ''; }
+                if (!airlineCode && flugArr) { const m = flugArr.match(/^[A-Z0-9]{2}/); airlineCode = m ? m[0] : ''; }
                 airlineCode = airlineCode.toUpperCase() || 'UNKNOWN';
                 if (!groups[airlineCode]) groups[airlineCode] = [];
                 groups[airlineCode].push(row);
@@ -1884,7 +1884,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
                 doc.setFillColor(104, 160, 133); doc.rect(180, 275, 15, 10, 'F');
                 doc.setTextColor(255, 255, 255); doc.setFontSize(8); doc.setFont('helvetica', 'bold'); doc.text(airlineCode, 182, 282);
                 doc.setTextColor(118, 128, 150); doc.setFontSize(7); doc.setFont('helvetica', 'normal');
-                doc.text('Verkehrszentrale CGN | Tel: 02203-404310/404420 | verkehrszentrale@cgn.de', 15, 287);
+                doc.text(`${emailClientSettings.senderName || 'Verkehrszentrale [FLUGHAFEN]'} | ${emailClientSettings.senderEmail || 'towbot@towbot.com'}`, 15, 287);
                 doc.text(`Seite ${i} von ${pageCount} | Erstellt mit Towbot V. 4.1.3`, 15, 292);
             }
             // Base64 ohne Data-URI-Prefix zurückgeben
@@ -2083,9 +2083,8 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
   <tr><td style="background:#eef2f7;padding:14px 28px;border-top:2px solid #5a7ba7;">
     <table width="100%" cellpadding="0" cellspacing="0"><tr>
       <td style="font-size:12px;color:#1e293b;line-height:1.9;">
-        <strong>Verkehrszentrale CGN</strong><br>
-        &#9990; 02203 &ndash; 404310 &nbsp;|&nbsp; 404420<br>
-        <a href="mailto:verkehrszentrale@cgn.de" style="color:#2d6da3;text-decoration:none;">verkehrszentrale@cgn.de</a>
+        <strong>${emailClientSettings.senderName || 'Verkehrszentrale [FLUGHAFEN]'}</strong><br>
+        <a href="mailto:${emailClientSettings.senderEmail || 'towbot@towbot.com'}" style="color:#2d6da3;text-decoration:none;">${emailClientSettings.senderEmail || 'towbot@towbot.com'}</a>
       </td>
       <td align="right" style="font-size:10px;color:#64748b;vertical-align:bottom;line-height:1.7;">
         Towbot V. 4.1.3<br>
@@ -2269,7 +2268,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
                     doc.setFillColor(218, 165, 32); doc.rect(180, 275, 15, 10, 'F');
                     doc.setTextColor(255, 255, 255); doc.setFontSize(8); doc.setFont('helvetica', 'bold'); doc.text(airlineCode, 182, 282);
                     doc.setTextColor(118, 128, 150); doc.setFontSize(7); doc.setFont('helvetica', 'normal');
-                    doc.text('Verkehrszentrale CGN | Tel: 02203-404310/404420 | verkehrszentrale@cgn.de', 15, 287);
+                    doc.text(`${emailClientSettings.senderName || 'Verkehrszentrale [FLUGHAFEN]'} | ${emailClientSettings.senderEmail || 'towbot@towbot.com'}`, 15, 287);
                     doc.text(`Seite ${i} von ${pageCount} | Erstellt mit Towbot V. 4.1.3 | HANGAR/LSA`, 15, 292);
                 }
                 const filename = `Towbot_HANGAR-LSA_${airlineCode}_${new Date().toISOString().split('T')[0]}.pdf`;
@@ -2355,7 +2354,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
                 doc.setFillColor(104, 160, 133); doc.rect(180, 275, 15, 10, 'F');
                 doc.setTextColor(255, 255, 255); doc.setFontSize(8); doc.setFont('helvetica', 'bold'); doc.text(airlineCode, 182, 282);
                 doc.setTextColor(118, 128, 150); doc.setFontSize(7); doc.setFont('helvetica', 'normal');
-                doc.text('Verkehrszentrale CGN | Tel: 02203-404310/404420 | verkehrszentrale@cgn.de', 15, 287);
+                doc.text(`${emailClientSettings.senderName || 'Verkehrszentrale [FLUGHAFEN]'} | ${emailClientSettings.senderEmail || 'towbot@towbot.com'}`, 15, 287);
                 doc.text(`Seite ${i} von ${pageCount} | Erstellt mit Towbot V. 4.1.3`, 15, 292);
             }
             return doc.output('datauristring').split(',')[1];
@@ -2471,8 +2470,8 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
             const se = document.getElementById('senderEmail');
             const ec = document.getElementById('emailClient');
             const ds = document.getElementById('defaultSubject');
-            if (sn) sn.value = emailClientSettings.senderName || 'Verkehrszentrale CGN';
-            if (se) se.value = emailClientSettings.senderEmail || 'verkehrszentrale@cgn.de';
+            if (sn) sn.value = emailClientSettings.senderName || 'Verkehrszentrale [FLUGHAFEN]';
+            if (se) se.value = emailClientSettings.senderEmail || 'towbot@towbot.com';
             if (ec) ec.value = emailClientSettings.client || 'outlook_classic';
             if (ds) ds.value = emailClientSettings.subject || 'Towbot Bereitstellungsauftrag - {airline} - {timestamp} - {shift}';
         }
@@ -2484,7 +2483,7 @@ function(t){t.__bidiEngine__=t.prototype.__bidiEngine__=function(t){var r,n,i,a,
             const senderEmail = document.getElementById('senderEmail').value.trim();
             if (!subject) { alert('❌ Bitte geben Sie ein Betreff-Template ein.'); return; }
             if (!senderEmail || !senderEmail.includes('@')) { alert('❌ Bitte geben Sie eine gültige Absender E-Mail-Adresse ein.'); return; }
-            emailClientSettings = { client, subject, senderName: senderName || 'Verkehrszentrale CGN', senderEmail, lastModified: new Date().toISOString() };
+            emailClientSettings = { client, subject, senderName: senderName || 'Verkehrszentrale [FLUGHAFEN]', senderEmail, lastModified: new Date().toISOString() };
             saveToStorage();
             showImportFeedback('✅ E-Mail-Einstellungen wurden erfolgreich gespeichert.', 'success');
         }
