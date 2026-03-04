@@ -1,8 +1,20 @@
-# TowBot V4.1.3 – Exposé-Texte (editierbar)
+# TowBot V. 4.1.3 – Exposé-Texte (editierbar)
 
 > **Hinweis für KI-Assistenten:** Diese Datei enthält alle sichtbaren Texte des Exposés (`index.html`).
 > Bearbeite die Texte hier und bitte mich anschließend, die Änderungen in `index.html` zu übertragen.
 > Die Struktur (Abschnitts-IDs, Tabellenstruktur usw.) bleibt unverändert – nur Texte werden ersetzt.
+> **Versionsformat:** Im gesamten Dokument gilt ausschließlich das Format „V. 4.1.3" (mit Leerzeichen und Punkt).
+
+---
+
+## BRAND-ERKLÄRUNG (frühe Platzierung in Abschnitt 01)
+
+```
+TowBot ist ein Kunstwort: „Tow" leitet sich vom englischen Verb to tow (schleppen) ab –
+und „Bot" ist die Kurzform von Robot (Roboter). Der Name beschreibt präzise, was die
+Software leistet: Sie automatisiert den Prozess der Schleppdisposition wie ein Roboter –
+zuverlässig, fehlerfrei und ohne manuellen Aufwand.
+```
 
 ---
 
@@ -12,7 +24,7 @@ Wird beim ersten Aufruf des Exposés angezeigt. Kann mit „Nicht mehr anzeigen"
 
 ### Badge (oben im Modal-Header)
 ```
-TowBot V4.1.3 · Exposé IT-Sicherheit & Zertifizierung
+TowBot V. 4.1.3 · Exposé IT-Sicherheit & Zertifizierung
 ```
 
 ### Überschrift Modal
@@ -35,14 +47,14 @@ Sehr geehrte Damen und Herren,
 mein Name ist [Ihr Name]. Als Mitarbeiter der Verkehrszentrale am Flughafen kenne ich die
 täglichen Abläufe der Schleppdisposition aus eigener Erfahrung – und ich kenne ihre Schwächen:
 manuellen Aufwand, Fehleranfälligkeit bei Planänderungen und den hohen Zeitdruck, unter dem
-jede Kommunikation an die Airlines stattfindet.
+jede Kommunikation an die Airlines und andere an diesem Prozess beteiligte Stationen stattfindet.
 ```
 
 ### Absatz 2
 ```
-Aus dieser Erkenntnis heraus habe ich TowBot entwickelt – ein digitales Werkzeug, das den
+Aus dieser Erkenntnis heraus habe ich den TowBot entwickelt – ein digitales Werkzeug, das den
 gesamten Workflow der Verkehrszentrale von der Dateneingabe bis zur professionellen Kommunikation
-an alle Partnerorganisationen automatisiert, dokumentiert und sicher macht.
+an alle Partnerorganisationen automatisiert und dadurch beschleunigt, dokumentiert und sicher macht.
 ```
 
 ### Hervorgehobener Hinweis (blaue Box)
@@ -55,7 +67,7 @@ ohne jede IT-Infrastruktur, ohne Server, ohne Risiko.
 
 ### Absatz 3
 ```
-In diesem Exposé finden Sie eine vollständige technische Dokumentation von TowBot V4.1.3:
+In diesem Exposé finden Sie eine vollständige technische Dokumentation von TowBot V. 4.1.3:
 seine Architektur, sein Sicherheitsmodell nach dem Prinzip Zero Trust by Design, seine
 DSGVO-Konformität sowie einen integrierten Testwert-Generator und eine vollständig
 funktionsfähige Live-Demo. Alles, was Sie für eine fundierte Entscheidung benötigen,
@@ -67,8 +79,9 @@ ist in diesem Dokument enthalten.
 ✋ Meine Bitte an Sie: Lesen Sie dieses Exposé mit offenem Blick. Testen Sie TowBot direkt
 in der eingebetteten Live-Demo. Und wenn Sie – wie ich – überzeugt sind, dass dieses Werkzeug
 die Arbeit der Verkehrszentrale nachhaltig verbessert: Begleiten Sie mich aktiv auf dem Weg
-zur offiziellen IT-Zertifizierung und Autorisierung für den Einsatz im IT-Umfeld unseres
-Flughafens. TowBot ist bereit – ich brauche Ihre Unterstützung und Ihr Fachwissen.
+zur offiziellen IT-Zertifizierung und Autorisierung für den Einsatz im IT-Umfeld der
+Verkehrszentrale und somit des AOCC unseres Flughafens. TowBot ist bereit – ich brauche
+Ihre Unterstützung und Ihr Fachwissen.
 ```
 
 ### Grußformel
@@ -79,7 +92,7 @@ Mit freundlichen Grüßen
 ### Name & Rolle (Signatur)
 ```
 [Ihr Name]
-Verkehrszentrale · [Flughafen] · Ideengeber & Entwickler TowBot V4.1.3
+Verkehrszentrale · [Flughafen] · Ideengeber & Entwickler TowBot V. 4.1.3
 ```
 
 ### Button-Text
@@ -98,7 +111,7 @@ Nicht mehr anzeigen
 
 ### Branding
 ```
-TowBot V4.1.3
+TowBot V. 4.1.3
 Production Ready
 Exposé · IT-Sec & Zertifizierung
 ```
@@ -143,7 +156,7 @@ TowBot © 2025–2026
 ## TOPBAR (Kopfzeile oben)
 
 ```
-TowBot V4.1.3 Exposé · IT-Sicherheitsprüfung & Zertifizierung · Airport Management System
+TowBot V. 4.1.3 Exposé · IT-Sicherheitsprüfung & Zertifizierung · Airport Management System
 ```
 
 Badge:
@@ -164,12 +177,12 @@ Button:
 
 #### Haupttitel
 ```
-TowBot V4.1.3
+TowBot V. 4.1.3
 ```
 
 #### Untertitel
 ```
-Intelligentes Airport Towing Management System · Verkehrszentrale
+Intelligentes Airport Towing Management System · Verkehrszentrale / AOCC
 ```
 
 #### Empfänger-Badges
@@ -179,30 +192,32 @@ Intelligentes Airport Towing Management System · Verkehrszentrale
 
 #### Metadaten-Felder
 
-| Bezeichnung        | Wert                              |
-|--------------------|-----------------------------------|
-| Dokument-Typ       | Technisches Exposé                |
-| Produktversion     | 4.1.3 (Production Ready)          |
-| Erstellt           | 01. März 2026                     |
-| Einsatzbereich     | Verkehrszentrale · Flughafen      |
-| Plattform          | HTML5 · Offline-SPA · ~828 KB    |
-| Klassifizierung    | 🔒 INTERN                         |
+| Bezeichnung        | Wert                                     |
+|--------------------|------------------------------------------|
+| Dokument-Typ       | Technisches Exposé                       |
+| Produktversion     | 4.1.3 (Production Ready)                 |
+| Erstellt           | 01. März 2026                            |
+| Einsatzbereich     | Verkehrszentrale / AOCC · Flughafen      |
+| Plattform          | HTML5 · Offline-SPA · ~828 KB           |
+| Klassifizierung    | 🔒 INTERN                                |
 
 ### Karte: Zweck dieses Dokuments
 
 **Titel:** 📌 Zweck dieses Dokuments
 
 ```
-Dieses Exposé richtet sich an die IT-Sicherheitsabteilung und die Zertifizierungsabteilung
-des Flughafens. Es dokumentiert TowBot V4.1.3 vollständig: technische Architektur, sämtliche
-Funktionen, Sicherheitsmodell, Datenschutz-Konformität und praktische Erprobbarkeit.
+Dieses Exposé richtet sich vornehmlich an die IT-Sicherheitsabteilung und die
+Zertifizierungsabteilung für Software des Flughafens. Es dokumentiert TowBot V. 4.1.3
+vollständig: technische Architektur, sämtliche Funktionen, Sicherheitsmodell,
+Datenschutz-Konformität und praktische Erprobbarkeit.
 
-Zielgruppe der Anwendung sind ausschließlich Mitarbeiter der Verkehrszentrale – der Abteilung,
-die Schlepp- und Bereitstellungsereignisse managed, verwaltet und bei jeder Planänderung an alle
-beteiligten Partnerorganisationen kommuniziert.
+Zielgruppe der Anwendung sind ausschließlich Mitarbeiter der Verkehrszentrale / AOCC –
+der Abteilung, die Schlepp- und Bereitstellungsereignisse verwaltet und bei jeder
+Planänderung an alle beteiligten Partnerorganisationen kommuniziert.
 
 Der integrierte Testwert-Generator (Abschnitt 14) ist identisch mit dem produktiven
-Testdaten-Generator und erzeugt realistische Schleppdaten für einen sofortigen End-to-End-Test.
+Testdaten-Generator und erzeugt realistische Schleppdaten für einen sofortigen
+End-to-End-Test ohne auf reale Livedaten angewiesen zu sein.
 ```
 
 ### Karte: Versionshistorie
@@ -228,7 +243,8 @@ Testdaten-Generator und erzeugt realistische Schleppdaten für einen sofortigen 
 TowBot ist eine vollständig im Browser lauffähige Offline-SPA (~828 KB, eine einzige
 HTML-Datei), die Flugzeug-Schleppereignisse am Flughafen digital verwaltet, versioniert,
 dokumentiert (PDF) und per EML-Datei an Partnerorganisationen kommuniziert. Es gibt keine
-Server-Infrastruktur, keinen Cloud-Speicher, keine Benutzerkonten und keine Installation.
+Server-Infrastruktur, keinen Cloud-Speicher, keine Benutzerkonten und keine Installation
+in der App.
 ```
 
 ### Karte 1: Was löst TowBot?
@@ -238,7 +254,7 @@ Server-Infrastruktur, keinen Cloud-Speicher, keine Benutzerkonten und keine Inst
 Tägliche Schleppplanung der Verkehrszentrale wird aus dem Dispositionssystem per Clipboard
 importiert. TowBot erkennt Änderungen auf Zellebene, gruppiert nach Airline und generiert
 per Klick professionelle PDFs und vorbefüllte E-Mail-Entwürfe (EML) für 23 vorkonfigurierte
-Airlines.
+Airlines. Weitere Airlines sind unlimitiert über den app-eigenen Adminbereich einpflegbar.
 ```
 
 ### Karte 2: Was macht es sicher?
@@ -269,7 +285,11 @@ Rollback, zweisprachige RFC-822-EML-Dateien mit PDF-Anhang, Schicht-Reset-Logik,
 
 #### Hauptaussage
 ```
-Von 15+ Minuten manueller Arbeit auf unter 30 Sekunden – für jede Airline, jeden Tag.
+TowBot verkürzt den Zeitaufwand für die Erzeugung und Versendung eines einzelnen
+Schleppereignisses von mehreren Minuten auf weit unter 30 Sekunden. Dieser Nutzen erhöht
+sich sogar, wenn Updates von zuvor versendeten Schleppereignissen erstellt und versendet
+werden müssen. Darin liegt ein massiver Vorteil des TowBot im direkten Vergleich mit der
+ursprünglichen Methode.
 ```
 
 #### Beschreibung
@@ -286,13 +306,14 @@ IT-Infrastruktur operiert.
 
 ```
 Das manuelle Erstellen, Formatieren und Verteilen von Schlepplisten pro Airline dauert in der
-Verkehrszentrale 15–20 Minuten – pro Iteration. TowBot erledigt den vollständigen Workflow für
-alle Airlines gleichzeitig: Import, Änderungserkennung, PDF-Generierung und EML-Versandvorbereitung
-in unter 30 Sekunden. Multipliziert mit mehreren Iterationen pro Schicht ergibt sich eine
-Zeitersparnis von mehreren Stunden täglich.
+Verkehrszentrale auf dem herkömmlichen Weg in der Regel ca. Minuten – pro Schleppereignis.
+TowBot erledigt den vollständigen Workflow für alle Airlines gleichzeitig: Import,
+Änderungserkennung, PDF-Generierung und EML-Versandvorbereitung in weit weniger als
+30 Sekunden. Multipliziert mit mehreren Iterationen pro Schicht ergibt sich eine
+markante Zeitersparnis für den Mitarbeitenden.
 ```
 
-**Kennzahl:** `30 Sek. statt 15–20 Min. pro Airline-Paket`
+**Kennzahl:** `weit weniger als 30 Sek. statt mehrerer Minuten pro Airline-Paket`
 
 ### Karte 2 – Datensicherheit
 **Titel:** 🛡️ Maximale Datensicherheit – Zero Trust by Design
@@ -327,8 +348,8 @@ jeden Planungsschritt lückenlos und nachvollziehbar.
 Keine Installation, kein Server, keine Administratorrechte, kein Wartungsvertrag, kein
 Update-Prozess. TowBot besteht aus einer einzigen HTML-Datei (~828 KB) und läuft unmittelbar
 auf jedem Dienstrechner der Verkehrszentrale mit einem modernen Browser. Es wird kein IT-Ticket
-benötigt, keine Freigabe durch die IT-Abteilung und kein Rollout-Projekt. Deployment in unter
-einer Minute: Datei öffnen, fertig.
+benötigt, keine wiederholten Freigaben durch die IT-Abteilung und kein Rollout-Projekt.
+Deployment in unter einer Minute: Datei öffnen, fertig.
 ```
 
 **Kennzahl:** `0 Min. Deployment-Zeit · 0 IT-Aufwand`
@@ -337,11 +358,12 @@ einer Minute: Datei öffnen, fertig.
 **Titel:** 📨 Professionelle, standardisierte Kommunikation
 
 ```
-Für alle 23 konfigurierten Airlines generiert TowBot per Klick ein DIN A4 PDF mit
+Für alle 23 vorab konfigurierten Airlines generiert TowBot per Klick ein DIN A4 PDF mit
 Logo-Wasserzeichen, Farbkennzeichnung, Änderungsprotokoll und Schicht-ID sowie einen vollständig
 vorbefüllten RFC-822-EML-Entwurf mit PDF als Anhang. Die E-Mail öffnet sich per Doppelklick
-direkt als Entwurf in Outlook oder Thunderbird. Corporate-Identity-Standard auf Knopfdruck –
-für jede Airline, in jeder Schicht.
+direkt als Entwurf in Outlook oder Thunderbird. Das Corporate-Identity-Standard auf Knopfdruck –
+für jede Airline, in jeder Schicht, das auch bei den adressierten Partnern des Flughafenbetreibers
+einen positiven und professionellen Eindruck macht.
 ```
 
 **Kennzahl:** `23 Airlines · 7 E-Mail-Clients · DE/EN`
@@ -359,6 +381,40 @@ Arbeitsablauf der Disposition.
 ```
 
 **Kennzahl:** `100% auf Verkehrszentrale-Anforderungen zugeschnitten`
+
+### Karte 7 – Corporate Identity *(NEU)*
+**Titel:** 🎨 Corporate Identity – Einheitliche Kommunikation auf Knopfdruck
+
+```
+Im heutigen Betrieb ohne TowBot gibt es bei der Übermittlung von Schleppereignissen schlicht
+keine einheitliche Corporate Identity. Bis zu zehn Adressaten – darunter Fluggesellschaften
+und Handling-Unternehmen – empfangen Nachrichten, deren Format so unterschiedlich ist wie
+die Zahl der Mitarbeitenden in der Verkehrszentrale:
+
+Jeder Disponent kopiert manuell aus dem Verwaltungssystem nach Excel, dann von Excel nach
+Outlook. Einen zentralen Verteiler gibt es nicht – jeder sucht und pflegt Empfänger
+individuell. Der Betreff ist inkonsistent: „Bereitstellung", „Schleppauftrag" oder ganz
+anderes. Das Layout variiert vollständig: manche senden ein kurzes Anschreiben, andere
+fügen nur die kopierte Tabelle ein, wieder andere den Auftrag als Fließtext statt als
+strukturierte Tabelle. Bei einigen fehlt die Signatur vollständig. Für Partner, die
+vorrangig auf Englisch kommunizieren, existiert keine standardisierte Lösung. Aufwand:
+ca. zwei Minuten pro Airline, pro Iteration – rein manuell, fehleranfällig und ohne
+wiedererkennbares Erscheinungsbild.
+
+TowBot adressiert und löst jeden dieser Mängel gezielt und vollständig: automatisch
+generierter, einheitlicher Betreff nach dem Schema {Airline} – Schleppdisposition –
+{Timestamp} – {Schicht}; standardisiertes DIN A4 PDF mit Logo-Wasserzeichen und
+Farbkennzeichnung; zweisprachiger E-Mail-Body (DE/EN) für internationale Partnerorganisationen;
+vollständige, stets korrekte Absenderinformation; zentral verwaltete Empfängerlisten im
+Adminbereich. Das Ergebnis: eine professionelle, vollständig vorbefüllte EML-Datei per
+Knopfdruck – konsistent für jeden Disponenten, jede Schicht, jede Airline.
+
+Hinweis: TowBot enthält zum jetzigen Zeitpunkt kein Markenzeichen des Flughafenbetreibers.
+Nach erfolgter Genehmigung durch die zuständigen Fachabteilungen kann das Unternehmenslogo
+zeitnah implementiert werden.
+```
+
+**Kennzahl:** `Einheitlich für alle 23 Airlines · Jede Schicht · Jeder Disponent`
 
 ### Fazit-Banner (grün)
 **Titel:** ✅ Fazit: TowBot ist kein generisches Tool – es ist das Power-Tool der Verkehrszentrale
@@ -379,11 +435,11 @@ adressiert diesen spezifischen Workflow mit dieser Tiefe und Sicherheitsarchitek
 **Titel:** 🏢 Einsatzkontext: Schleppkoordination Flughafen
 
 ```
-Am Flughafen werden täglich Flugzeuge zwischen Gates, Terminals und Hangars geschleppt.
-Die Verkehrszentrale ist die zentrale Abteilung, die Schlepp- und Bereitstellungsereignisse
-managed, verwaltet und bei jeder Planänderung an alle beteiligten Partnerorganisationen
-(Airlines, Handling-Dienstleister, Vorfeld) kommuniziert. TowBot ersetzt diesen manuellen
-Prozess vollständig: Import → Änderungserkennung → PDF → EML.
+Am Flughafen werden im 24/7 Betrieb täglich Flugzeuge zwischen Gates, Terminals und Hangars
+geschleppt. Die Verkehrszentrale ist die zentrale Abteilung, die Schlepp- und
+Bereitstellungsereignisse verwaltet und bei jeder Planänderung an alle beteiligten
+Partnerorganisationen (Airlines, Handling-Dienstleister, Vorfeld) kommuniziert. TowBot ersetzt
+hierbei den bisherigen, manuellen Prozess vollständig: Import → Änderungserkennung → PDF → EML.
 ```
 
 ### Karte: TSV-Format (Hinweis unter der Tabelle)
@@ -435,7 +491,8 @@ Ereignisse zu H01/H02/H03/LSA werden automatisch erkannt und in einem separaten 
 
 ```
 TowBot erkennt Schichtwechsel (Früh 06–14 Uhr, Spät 14–22 Uhr, Nacht 22–06 Uhr) und
-setzt die Session automatisch zurück. Schicht-ID im PDF-Header und E-Mail-Subject.
+setzt die Session automatisch zurück. Schicht-ID (FRÜH/SPÄT/NACHT) im PDF-Header und
+E-Mail-Subject.
 ```
 
 ### Feature-Karte 6
@@ -460,7 +517,9 @@ wiederhergestellt, mit dem aktuellen Stand verglichen oder gelöscht werden.
 
 ```
 Admin kann eine portable, eigenständige HTML-Datei mit allen Airlines, E-Mail-Konfigurationen
-und Einstellungen exportieren – für Weitergabe oder Archivierung.
+und Einstellungen exportieren – für Weitergabe oder Archivierung. Die Weitergabe einer solchen
+Datei würde aus Datenschutzgründen über das gemeinsame Laufwerk der Abteilung Verkehrszentrale
+erfolgen.
 ```
 
 ---
@@ -538,7 +597,7 @@ fließt in PDF-Header und E-Mail-Subject ein.
 ## ABSCHNITT 07 – E-Mail-System (EML · RFC 822)
 
 ### Info-Banner (grün)
-**Titel:** ✅ Neues EML-basiertes E-Mail-System in V4.1.3
+**Titel:** ✅ Neues EML-basiertes E-Mail-System in V. 4.1.3
 
 ```
 Das bisherige Outlook-COM / mailto-System wurde vollständig durch ein RFC-822-konformes
@@ -612,7 +671,7 @@ helleren Header mit rotem CANX-Eintrag.
 - Logo-Upload (PNG/JPG/SVG, max 2 MB → Base64)
 - E-Mail-Adressen (Semikolon-getrennt)
 - CRUD: Erstellen / Bearbeiten / Löschen (mit Bestätigung)
-- 23 Airlines vorkonfiguriert
+- 23 Airlines vorkonfiguriert ohne E-Mail-Adressen
 
 ### Feature-Karte B: E-Mail-Konfiguration
 **Titel:** 📧 B · E-Mail-Konfiguration
@@ -639,6 +698,13 @@ helleren Header mit rotem CANX-Eintrag.
 - App-Export mit Stammdaten (portable HTML)
 - Reset All (mit dreifacher Bestätigung)
 - Archiv/Completed/Hangar/Cancelled einzeln löschen
+
+```
+Hinweis: Optimalerweise würde TowBot auf einem Appserver im Intranet laufen, sodass
+insbesondere der Adminbereich stets den aktuellsten Stand der Empfänger- und Airlinedaten
+aufweist. TowBot steht zum jetzigen Zeitpunkt als serverlose, standalone HTML-App zur
+Verfügung, könnte jedoch mit geringem Aufwand als serverbasierte App realisiert werden.
+```
 
 ---
 
@@ -794,18 +860,18 @@ Airline-Verteilung: EW: 55% · FR: 35% · X3: 10%
 **Titel:** ℹ️ Vollständige Produktivversion eingebettet
 
 ```
-Die eingebettete Anwendung ist TowBot V4.1.3 in voller Funktionalität. Generierte Testdaten
+Die eingebettete Anwendung ist TowBot V. 4.1.3 in voller Funktionalität. Generierte Testdaten
 aus Abschnitt 14 können direkt importiert werden. Für optimale Darstellung empfehlen wir
 den Button „In neuem Tab öffnen".
 ```
 
 ### Demo-Fenster
 
-**Titel (Titelleiste):** `✈️ TowBot V4.1.3 · Flughafen`
+**Titel (Titelleiste):** `✈️ TowBot V. 4.1.3 · Flughafen`
 
 **Button:** `↗ In neuem Tab öffnen`
 
-**Ladetext:** `TowBot V4.1.3 wird geladen…`
+**Ladetext:** `TowBot V. 4.1.3 wird geladen…`
 
 ---
 
